@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#050705" />
+  <meta name="description" content="EzioCloud — a new orbit for your files." />
+  <title>EzioCloud — File Space</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="EzioCloud home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">EZIO<span>CLOUD</span></span>
+      </a>
+      <div class="topbar-meta"><span class="system-label">CLOUD STORAGE SYSTEM</span><span class="system-status"><i></i> SYSTEM ONLINE</span></div>
+      <div id="signed-in-tools" class="signed-in-tools" hidden>
+        <span class="storage-label"><span class="status-dot"></span> Telegram storage connected</span>
+        <button id="logout-button" class="button button-quiet" type="button"><span class="button-symbol">↗</span> Sign out</button>
+      </div>
+    </header>
+
+    <section id="login-view" class="login-view" hidden>
+      <div class="login-story">
+        <div class="story-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> EZIOCLOUD / PERSONAL FILE SPACE</p>
+          <h1>Your files.<br /><span>In a new orbit.</span></h1>
+          <p class="story-lede">A cleaner way to keep the things that matter close, organized, and ready when you need them.</p>
+          <div class="story-micro"><span class="micro-index">01</span><span>PRIVATE CLOUD STORAGE</span><span class="micro-divider"></span><span>BUILT FOR YOUR FILES</span></div>
+        </div>
+        <div class="orb-stage" aria-hidden="true">
+          <div class="orb-coordinate coord-top">FIG. 01 <span>— EZIO CORE</span></div>
+          <div class="orb-grid"></div>
+          <div class="orb-shadow"></div>
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="orb-shell"><div class="orb-inner"><div class="orb-highlight"></div><div class="orb-core"></div></div></div>
+          <div class="orb-crosshair crosshair-a"></div><div class="orb-crosshair crosshair-b"></div>
+          <div class="orb-coordinate coord-bottom"><span>CORE STATE</span><strong>ACTIVE</strong><i></i></div>
+        </div>
+      </div>
+      <div class="login-side">
+        <div class="login-card glass-panel">
+          <div class="card-topline"><span>ACCESS PORTAL</span><span class="card-index">AUTH // 01</span></div>
+          <div class="login-symbol" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="eyebrow login-eyebrow">WELCOME TO YOUR SPACE</p>
+          <h2>Sign in to<br />EzioCloud<span class="accent-dot">.</span></h2>
+          <p class="muted login-copy">Enter your access password to open your file space.</p>
+          <form id="login-form" class="login-form">
+            <label for="password">ACCESS PASSWORD</label>
+            <div class="password-wrap"><span class="input-prefix" aria-hidden="true">◈</span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required /><button id="toggle-password" class="toggle-password" type="button" aria-label="Show password">SHOW</button></div>
+            <button id="login-submit" class="button button-primary" type="submit"><span>Enter your space</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            <p id="login-error" class="message error" role="alert" hidden></p>
+          </form>
+          <div class="secure-note"><span class="lock-icon" aria-hidden="true">⌑</span><span>SECURE CONNECTION <i></i> PRIVATE ACCESS</span></div>
+        </div>
+        <div class="login-side-note"><span class="note-mark">//</span><span>Your cloud. Your orbit.</span></div>
+      </div>
+    </section>
+
+    <section id="drive-view" class="drive-view" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> STORAGE INDEX / 001</p>
+          <h1>Your files<span class="accent-dot">.</span></h1>
+          <p class="muted dashboard-lede">All your digital essentials, in one place.</p>
+        </div>
+        <label class="button button-primary upload-button" for="file-input"><span class="upload-plus" aria-hidden="true">＋</span><span>Upload files</span><span class="button-arrow" aria-hidden="true">↗</span></label>
+        <input id="file-input" type="file" multiple hidden />
+      </div>
+
+      <div class="stats-row">
+        <article class="stat-card glass-panel"><span class="stat-label">TOTAL FILES <span class="stat-code">/ 01</span></span><strong id="stat-files">—</strong><span class="stat-foot">INDEXED IN YOUR SPACE</span><span class="stat-icon" aria-hidden="true">▤</span></article>
+        <article class="stat-card glass-panel"><span class="stat-label">STORAGE USED <span class="stat-code">/ 02</span></span><strong id="stat-storage">—</strong><span class="stat-foot">TOTAL FILE SIZE</span><span class="stat-icon" aria-hidden="true">◉</span></article>
+        <article class="stat-card stat-card-visual glass-panel"><span class="stat-label">CLOUD STATUS <span class="stat-code">/ 03</span></span><strong><i class="status-dot"></i> ONLINE</strong><span class="stat-foot">UP TO 2 GB PER FILE</span><div class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      </div>
+
+      <div id="transfer-panel" class="transfer-panel glass-panel" hidden>
+        <div class="transfer-heading"><span><i class="transfer-pulse"></i> <span id="transfer-name">Uploading…</span></span><span id="transfer-percent">0%</span></div>
+        <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        <div class="transfer-bottom"><p id="transfer-status" class="muted small">Preparing upload</p><button id="cancel-upload" class="button button-quiet small-button" type="button">Cancel transfer</button></div>
+      </div>
+
+      <div class="files-section glass-panel">
+        <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> FILE DIRECTORY</p><h2>All files <span id="file-count" class="file-count"></span></h2></div><label class="search-box"><span class="search-glyph" aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search your files" autocomplete="off" /><kbd>⌘ K</kbd></label></div>
+        <div id="notice" class="notice" role="status" hidden></div>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-graphic"><span class="empty-orbit"></span><span class="empty-cube">◇</span></div><p class="eyebrow">NO FILES IN ORBIT</p><h3>Your space is ready.</h3><p class="muted">Start your collection by uploading a file.</p><label class="button button-outline" for="file-input">＋ Add your first file</label></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th><span class="table-heading">FILE NAME</span></th><th><span class="table-heading">SIZE</span></th><th><span class="table-heading">ADDED TO ORBIT</span></th><th><span class="visually-hidden">Actions</span></th></tr></thead>
+            <tbody id="file-list"></tbody>
+          </table>
+        </div>
+        <div class="directory-footer"><span><i class="footer-signal"></i> DIRECTORY SYNCED</span><span>EZIOCLOUD STORAGE <b>·</b> 2 GB MAX / FILE</span></div>
+      </div>
+      <div class="dashboard-bottom"><span>FILES AT THE SPEED OF THOUGHT.</span><span>ENCRYPTION &amp; PRIVACY DEPEND ON YOUR DEPLOYMENT CONFIGURATION.</span></div>
+    </section>
+
+    <footer class="site-footer"><span class="footer-left"><span class="footer-brand">E//C</span> EZIOCLOUD <span class="footer-separator">/</span> YOUR FILES, IN ORBIT</span><span class="developer-credit">DEVELOPED BY <strong>imira_H</strong></span></footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
